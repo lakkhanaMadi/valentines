@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* =======================
+   Letter container
+======================= */
+#letter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#letter-window {
+  width: 90vw;
+  max-width: 800px;
+  text-align: center;
+  position: fixed;
+  background-image: url("window.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  aspect-ratio: 3 / 2;
+  border-radius: 12px;
+  padding: 180px 20px 0 20px;
+}
+
+/* =======================
+   Heading
+======================= */
+h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+/* =======================
+   Cat
+======================= */
+.cat {
+  width: 250px;
+  margin: 10px 0;
+  transition: width 0.4s ease;
+}
+
+/* =======================
+   Buttons container
+   (layout locked)
+======================= */
+#buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: 120px;
+  /* 🔒 layout never changes */
+  align-items: center;
+}
+
+/* =======================
+   Buttons
+======================= */
+.btn {
+  width: 120px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.yes-btn,
+.no-btn {
+  width: 120px;
+  height: auto;
+  display: inline-block;
+}
+
+.yes-btn {
+  position: relative;
+  z-index: 2;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+.no-wrapper {
+  position: relative;
+}
+
+.no-btn {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.15s ease;
+  cursor: default;
+}
+
+/* =======================
+   Final Text
+======================= */
+.final-text {
+  position: absolute;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 240, 240, 0.5);
+  border-radius: 12px;
+
+  /* perfectly centered over buttons */
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* =======================
+   Hide buttons but
+   KEEP layout
+======================= */
+.hidden-keep-space .btn,
+.hidden-keep-space .no-wrapper {
+  visibility: hidden;
+  pointer-events: none;
+}
